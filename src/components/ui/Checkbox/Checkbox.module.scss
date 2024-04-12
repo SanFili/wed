@@ -1,0 +1,104 @@
+.checkbox {
+  $self: &;
+  position: relative;
+
+  display: flex;
+
+  width: fit-content;
+  align-items: center;
+
+  &:hover {
+    #{$self}__box {
+      border-color: gray;
+    }
+
+    #{$self}__label {
+      color: gray;
+    }
+  }
+
+  &__input {
+    position: absolute;
+    z-index: -1;
+    appearance: none;
+
+    margin: 0;
+
+    opacity: 0;
+
+    &:checked {
+      & + #{$self}__box {
+        border-color: purple;
+        background-color: purple;
+
+        #{$self}__check {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &__box {
+    flex-shrink: 0;
+
+    position: relative;
+
+    display: inline-block;
+
+    box-sizing: border-box;
+    width: 24px;
+    height: 24px;
+
+    content: "";
+    cursor: pointer;
+
+    border: 1px solid gray;
+    border-radius: 4px;
+
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    transition: background-color 0.3s, border-color 0.3s;
+
+    @include mq("md") {
+      width: 22px;
+      height: 22px;
+    }
+  }
+
+  &__check {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: 16px;
+    height: 16px;
+
+    cursor: pointer;
+
+    opacity: 0;
+
+    transition: opacity 0.3s;
+    transform: translate(-50%, -50%);
+
+    @include mq("lg") {
+      width: 11px;
+      height: 11px;
+    }
+  }
+
+  &__label {
+    padding-left: 12px;
+
+    cursor: pointer;
+
+    letter-spacing: -0.005em;
+
+    transition: color 0.3s;
+    align-items: center;
+
+    @include mq("xs") {
+      padding-left: 8px;
+    }
+  }
+}
