@@ -1,0 +1,151 @@
+/* stylelint-disable */
+@use "sass:math";
+@use "sass:map";
+
+$breakpoints: (
+  "xxl": 2560,
+  "xl": 1920,
+  "l": 1600,
+  "lg": 1360,
+  "md": 1280,
+  "xs": 768,
+  "xxs": 480,
+);
+
+@mixin mq($maxWidth, $minWidth: false) {
+  @if map-has-key($breakpoints, $maxWidth) {
+    $maxWidth: map-get($breakpoints, $maxWidth);
+
+    @if ($minWidth != false) and map-has-key($breakpoints, $minWidth) {
+      $minWidth: map-get($breakpoints, $minWidth) + "px";
+
+      @media (max-width: ($maxWidth - 1px)) and (min-width: $minWidth) {
+        @content;
+      }
+    } @else {
+      @media (max-width: ($maxWidth - 1px)) {
+        @content;
+      }
+    }
+  }
+}
+
+@mixin transition($property...) {
+  $transition-normal: 0.3s ease;
+  $animated-property: #{""};
+
+  @if length($property) > 1 {
+    @for $i from 1 through length($property) - 1 {
+      $animated-property: $animated-property nth($property, $i) $transition-normal #{", "};
+    }
+  }
+
+  transition: $animated-property nth($property, length($property)) $transition-normal;
+}
+
+@mixin button-reset {
+  padding: 0;
+  cursor: pointer;
+  color: inherit;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  appearance: none;
+}
+
+@mixin hover() {
+  &:focus-visible,
+  &:hover {
+    @content;
+  }
+}
+
+/* Кастомный скролл */
+@mixin scroll($direction, $parentSelector, $alwaysShow) {
+  overflow-#{$direction}: auto;
+  margin-right: calc(var(--scroll-offset, 5px) * -1);
+  padding-right: var(--scroll-offset, 5px);
+  scrollbar-color: var(--border-static) var(--background-secondary);
+
+  @include mq("md") {
+    margin-right: calc(var(--scroll-offset, 0px) * -1);
+    padding-right: var(--scroll-offset, 0);
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: var(--background-secondary);
+
+    @include mq("md") {
+      background-color: var(--btn-accent-light);
+    }
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--border-static);
+
+    @include mq("xs") {
+      background-color: var(--background-accent);
+    }
+  }
+
+  &::-webkit-scrollbar {
+    width: 3px;
+
+    @include mq("xs") {
+      width: 4px;
+    }
+  }
+
+  @if ($alwaysShow == false) {
+    @if ($parentSelector) {
+      #{$parentSelector}:not(:hover) &::-webkit-scrollbar-track {
+        background-color: transparent;
+      }
+
+      #{$parentSelector}:not(:hover) &::-webkit-scrollbar-thumb {
+        background-color: transparent;
+      }
+
+      #{$parentSelector}:not(:hover) & {
+        -ms-overflow-style: none;
+        overflow: -moz-scrollbars-none;
+        scrollbar-width: thin;
+        scrollbar-color: transparent transparent;
+      }
+    } @else {
+      &:not(:hover)::-webkit-scrollbar-track {
+        background-color: transparent;
+      }
+
+      &:not(:hover)::-webkit-scrollbar-thumb {
+        background-color: transparent;
+      }
+
+      &:not(:hover) {
+        -ms-overflow-style: none;
+        overflow: -moz-scrollbars-none;
+        scrollbar-width: thin;
+        scrollbar-color: transparent transparent;
+      }
+    }
+  }
+}
+
+@mixin scroll-y($parentSelector: false, $alwaysShow: false) {
+  @include scroll("y", $parentSelector, $alwaysShow);
+}
+
+@mixin scroll-x($parentSelector: false, $alwaysShow: false) {
+  @include scroll("x", $parentSelector, $alwaysShow);
+}
+
+/* Скрывает скролл */
+@mixin scroll-hidden() {
+  -ms-overflow-style: none;
+  overflow: -moz-scrollbars-none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+}
