@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "export": "next build && next export",
     "start": "next start",
     "check": "yarn run lint:es && yarn run lint:style && yarn run type-check",
     "lint:es": "next lint",
@@ -24,19 +25,13 @@
   "dependencies": {
     "@apollo/client": "^3.5.10",
     "@types/qs": "^6.9.7",
-    "axios": "^0.27.2",
     "classnames": "^2.3.1",
-    "graphql": "^16.3.0",
-    "gsap": "^3.10.2",
     "next": "12.1.4",
-    "pigeon-maps": "^0.21.2",
-    "qs": "^6.11.0",
     "react": "18.0.0",
     "react-dom": "18.0.0",
     "react-intersection-observer": "^8.33.1",
     "react-transition-group": "^4.4.5",
     "reset-css": "^5.0.1",
-    "sharp": "^0.30.3",
     "swiper": "^8.0.7"
   },
   "devDependencies": {
@@ -53,7 +48,6 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-simple-import-sort": "^7.0.0",
-    "husky": "^7.0.4",
     "lint-staged": "^12.3.7",
     "prettier": "^2.6.1",
     "sass": "^1.49.10",

@@ -11,19 +11,10 @@ const nextConfig = {
     prependData: '@import "mixins.scss";',
   },
   images: {
-    deviceSizes: [414, 768, 1024, 1366, 1600, 1920, 2560],
+    loader: "akamai",
+    path: "",
   },
-  trailingSlash: (slug) => {
-    return !slug.match(/^\/api\/*/);
-  },
-  async rewrites() {
-    return [
-      {
-        source: "/api/",
-        destination: "https://intelsy.pro/api/",
-      },
-    ];
-  },
+  output: "export",
 };
 
 module.exports = nextConfig;
