@@ -23,7 +23,7 @@ const nextConfig = {
   },
   images: {
     loader: "akamai",
-    path: "wed/",
+    path: "",
   },
   output: "export",
 };
