@@ -11,8 +11,8 @@ module.exports = {
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  assetPrefix,
-  basePath,
+  // assetPrefix,
+  // basePath,
   reactStrictMode: true,
   experimental: {
     outputStandalone: true,

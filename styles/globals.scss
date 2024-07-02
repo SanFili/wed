@@ -9,6 +9,7 @@ body,
   min-height: 100%;
   margin: 0;
   padding: 0;
+  overflow-x: none;
 
   font-family: "Montserrat", sans-serif;
   background-color: var(--milk);
@@ -46,7 +47,7 @@ span {
 h2 {
   margin-bottom: 24px;
   text-align: center;
-  font-size: 24;
+  font-size: 24px;
   font-weight: 800;
   font-style: normal;
   color: var(--yellow);
