@@ -4,6 +4,8 @@ import styles from "./Loader.module.scss";
 
 const Loader = () => {
   return (
+    <>
+    <div className={styles.overlay} />
     <div className={styles.loader}>
       <span className={styles.loader__text}>Loading...</span>
       <div className={styles.loader__spinner}>
@@ -11,7 +13,8 @@ const Loader = () => {
         <div className={cn(styles.loader__dot, styles.loader__dot_pink)} />
         <div className={cn(styles.loader__dot, styles.loader__dot_yellow)} />
       </div>
-    </div>
+      </div>
+      </>
   );
 };
 
