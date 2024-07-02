@@ -1,8 +1,18 @@
 const path = require("path");
 
+const repo = "wed";
+const assetPrefix = `/${repo}/`;
+const basePath = `/${repo}`;
+
+module.exports = {
+  assetPrefix: assetPrefix,
+  basePath: basePath,
+};
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  basePath: "/wed",
+  assetPrefix,
+  basePath,
   reactStrictMode: true,
   experimental: {
     outputStandalone: true,
