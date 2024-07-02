@@ -12,7 +12,7 @@ const Dresscode = () => {
         Мы создаем этот день с особым трепетом, поэтому будем благодарны, если в своих образах вы поддержите палитру
         нашего праздника:
       </p>
-      <div>
+      <div className={styles.dresscode__colors}>
         <Image src="/images/colors.svg" alt="dress-code" title="dress-code" width="362" height="84" />
       </div>
       <p>

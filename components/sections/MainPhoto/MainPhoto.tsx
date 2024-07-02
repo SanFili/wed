@@ -6,9 +6,10 @@ const MainPhoto = () => {
   return (
     <section className={styles.photo}>
       <div className={styles.photo__background}>
-        <div>
-          <Image src="/images/background.svg" alt="back" title="back" width="479" height="373" />
-        </div>
+        <Image src="/images/background.svg" alt="back" title="back" width="479" height="373" />
+      </div>
+      <div className={styles.photo__backFrame}>
+        <Image src="/images/backMini.svg" alt="back" title="back" width="426" height="392" />
       </div>
       <div className={styles.photo__image}>
         <Image src="/images/photo.jpg" alt="photo" title="photo" width="345" height="345" />
