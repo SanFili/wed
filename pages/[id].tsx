@@ -19,7 +19,19 @@ export async function getStaticProps({ params }: StaticParamsType) {
 
 export const getStaticPaths = () => {
   return {
-    paths: [{ params: { id: "friend" } }, { params: { id: "couple" } }],
+    paths: [
+      { params: { id: "friend" } }, // друзья
+      { params: { id: "plus" } }, // с плюс 1
+      { params: { id: "sh" } }, // Широких
+      { params: { id: "sv" } }, // Свердловы
+      { params: { id: "nt" } }, // Наталья
+      { params: { id: "al" } }, // Алексей
+      { params: { id: "ol" } }, // Олег
+      { params: { id: "olg" } }, // Ольга
+      { params: { id: "sr" } }, // Сергей
+      { params: { id: "lil" } }, // Лиля
+      { params: { id: "yr" } }, // Юровы
+    ],
     fallback: false,
   };
 };
