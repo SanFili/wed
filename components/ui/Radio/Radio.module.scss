@@ -1,0 +1,69 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  &_button {
+    width: 410px;
+    height: 64px;
+    padding: 24px 16px;
+    border-radius: 8px;
+    background-color: var(--pink);
+    transition: all 0.3s ease;
+    align-items: center;
+
+    &_checked {
+      border: 1px solid var(--black);
+    }
+  }
+}
+
+.radio {
+  position: relative;
+  width: 23px;
+  height: 23px;
+  margin: 0;
+  cursor: pointer;
+  border: 3px solid var(--pink);
+  border-radius: 50%;
+  background-color: var(--white);
+  appearance: none;
+  flex-shrink: 0;
+
+  &::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: inline-block;
+    width: 11px;
+    height: 11px;
+    content: "";
+    opacity: 0;
+    border-radius: 50%;
+    background-color: var(--pink);
+    transform: translate(-50%, -50%);
+
+    @include transition(opacity);
+  }
+
+  &_checked {
+    &::before {
+      opacity: 1;
+    }
+  }
+
+  &_disabled {
+    pointer-events: none;
+    opacity: 0.3;
+  }
+
+  &__label {
+    margin-left: 16px;
+
+    @include transition(opacity);
+
+    &_disabled {
+      opacity: 0.3;
+    }
+  }
+}
