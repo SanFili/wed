@@ -11,8 +11,8 @@ module.exports = {
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  assetPrefix,
-  basePath,
+  // assetPrefix,
+  // basePath,
   reactStrictMode: true,
   experimental: {
     outputStandalone: true,
@@ -23,7 +23,7 @@ const nextConfig = {
   },
   images: {
     loader: "akamai",
-    path: "",
+    path: "wed/",
   },
   output: "export",
 };
