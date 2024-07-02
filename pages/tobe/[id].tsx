@@ -1,9 +1,12 @@
-import { GetStaticPaths } from "next";
 import { Form } from "@/components/sections";
 import { guests } from "@/data/guests";
 import { GuestType } from "@/types/guests";
 
-export async function getStaticProps({ params }: { params: string }) {
+type StaticParamsType = {
+  params: { id: string };
+};
+
+export async function getStaticProps({ params }: StaticParamsType) {
   return {
     props: {
       params,
@@ -11,17 +14,18 @@ export async function getStaticProps({ params }: { params: string }) {
   };
 }
 
-export const getStaticPaths: GetStaticPaths<{ slug: string }> = async () => {
+export const getStaticPaths = () => {
   return {
-    paths: [], //indicates that no page needs be created at build time
-    fallback: "blocking", //indicates the type of fallback
+    paths: [{ params: { id: "friend" } }, { params: { id: "couple" } }],
+    fallback: false,
   };
 };
 
-const Quiz = ({ params }: { params: string }) => {
-  const info: GuestType = guests[params] || guests.couple;
+const Quiz = ({ params }: StaticParamsType) => {
+  const slug = params.id;
+  const info: GuestType = guests[slug];
 
-  return <Form items={info.formItems} slug={params} />;
+  return <Form items={info.formItems} slug={slug} />;
 };
 
 export default Quiz;
