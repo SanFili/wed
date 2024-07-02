@@ -3,6 +3,21 @@
 
   & p {
     margin-bottom: 12px;
+
+    & a {
+      color: #2c2c2c;
+      text-decoration: none;
+      background: linear-gradient(to right, var(--yellow), var(--yellow)),
+        linear-gradient(to right, var(--pink), var(--pink));
+      background-size: 100% 3px, 0 3px;
+      background-position: 100% 100%, 0 100%;
+      background-repeat: no-repeat;
+      transition: background-size 0.5s linear;
+
+      &:hover {
+        background-size: 0 3px, 100% 3px;
+      }
+    }
   }
 
   &__button {

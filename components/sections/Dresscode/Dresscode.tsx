@@ -15,7 +15,9 @@ const Dresscode = () => {
       <div>
         <Image src="/images/colors.svg" alt="dress-code" title="dress-code" width="362" height="84" />
       </div>
-      <p>Пожалуйста, откадитесь в этот день от красного, ярко розового и черного.</p>
+      <p>
+        <a>Пожалуйста, откажитесь в этот день от красного, ярко розового и черного.</a>
+      </p>
       <p>Если у вас возникнут трудности с поиском, вы можете написать нам, мы с радостью поможем вам.</p>
       <Button className={styles.dresscode__button}>Посмотреть референсы</Button>
     </section>
