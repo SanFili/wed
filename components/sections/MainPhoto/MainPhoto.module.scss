@@ -1,21 +1,30 @@
 .photo {
+  position: relative;
   height: 373px;
   padding: 0;
+
+  @include mq("xxs") {
+    height: 340px;
+  }
 
   &__background {
     position: absolute;
     z-index: 1;
     top: 0;
     left: 50%;
-    width: 479px;
+    min-width: 420px;
+    max-width: 479px;
+    width: calc(100vw + 100px);
     transform: translate(-50%, 0);
   }
 
   &__image {
     position: relative;
-    top: 0;
+    top: -5px;
     left: 50%;
-    width: 345px;
+    width: calc(100vw - 20px);
+    min-width: 300px;
+    max-width: 345px;
     transform: translate(-50%, 0);
   }
 
@@ -34,7 +43,9 @@
     z-index: 2;
     top: 3px;
     left: 50%;
-    width: 368px;
+    width: 100vw;
+    min-width: 320px;
+    max-width: 368px;
     transform: translateX(-50%);
   }
 
@@ -49,6 +60,10 @@
     font-size: 46px;
     color: var(--yellow);
     transform: translateX(-50%);
+
+    @include mq("xxs") {
+      font-size: 38px;
+    }
 
     & span {
       display: inline-block;
@@ -69,5 +84,11 @@
     line-height: 65%;
     color: var(--yellow);
     transform: scale(1.8, 1) translateY(-50%);
+
+    @include mq("xxs") {
+      font-size: 48px;
+      top: 45%;
+      left: 85px;
+    }
   }
 }

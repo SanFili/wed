@@ -6,7 +6,9 @@ const MainPhoto = () => {
   return (
     <section className={styles.photo}>
       <div className={styles.photo__background}>
-        <Image src="/images/background.svg" alt="back" title="back" width="479" height="373" />
+        <div>
+          <Image src="/images/background.svg" alt="back" title="back" width="479" height="373" />
+        </div>
       </div>
       <div className={styles.photo__image}>
         <Image src="/images/photo.jpg" alt="photo" title="photo" width="345" height="345" />

@@ -8,8 +8,8 @@ $breakpoints: (
   "l": 1600,
   "lg": 1360,
   "md": 1280,
-  "xs": 768,
-  "xxs": 480,
+  "xs": 478,
+  "xxs": 360,
 );
 
 @mixin mq($maxWidth, $minWidth: false) {
