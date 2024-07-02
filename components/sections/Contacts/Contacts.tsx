@@ -12,7 +12,9 @@ const Contacts = () => {
         <div className={styles.contacts__frame}>
           <Image src="/images/frame.svg" alt="frame" title="frame" width="368" height="340" />
         </div>
-        <p className={styles.contacts__text}>это мы ждем, когда вы подвердите приглашение</p>
+        <p className={styles.contacts__text}>
+          это мы ждем, когда вы <br /> подвердите приглашение
+        </p>
         <div className={styles.contacts__love}>
           <p>с любовью, саша и коля</p>
           <div>
