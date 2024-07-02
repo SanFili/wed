@@ -15,11 +15,11 @@ jobs:
         with:
           # update the Node version to meet your needs
           node-version: 16
-          cache: npm
+          cache: yarn
 
       - name: Build
         run: |
-          yarn ci
+          yarn install
           yarn export
           touch out/.nojekyll
 
