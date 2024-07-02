@@ -1,17 +1,17 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import React from "react";
+import React, { useEffect } from "react";
 
 import { Button } from "@/components/ui";
 
 const Home = () => {
   const router = useRouter();
-  const [slug, setSlug] = useState<string | null>(null);
+  // const [slug, setSlug] = useState<string | null>(null);
 
   useEffect(() => {
     const s = localStorage.getItem("slug");
     router.push({ pathname: "/invite", query: { slug: s || "friend" } });
-    setSlug(s);
+    // setSlug(s);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
