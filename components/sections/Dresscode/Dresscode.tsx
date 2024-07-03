@@ -9,8 +9,8 @@ const Dresscode = () => {
     <section className={styles.dresscode}>
       <h2>ДРЕСС-КОД</h2>
       <p>
-        Мы создаем этот день с особым трепетом, поэтому будем благодарны, если хотя бы в одном элементе своего образа вы
-        поддержите палитру нашего праздника:
+        Мы создаем этот день с особым трепетом, поэтому просим вас поддержать общую атмосферу праздника в ваших образах.
+        Мы собрали немного вдохновения для вас , а так же подготовили цветовую палитру:
       </p>
       {/* <div className={styles.dresscode__colors}>
         <Image src="/images/colors.svg" alt="dress-code" title="dress-code" width="362" height="84" />
@@ -45,7 +45,13 @@ const Dresscode = () => {
         </a>
       </p>
       <p>Если у вас возникнут трудности с поиском, вы можете написать нам, мы с радостью поможем вам.</p>
-      <Button className={styles.dresscode__button}>Посмотреть референсы</Button>
+      <Button
+        href="https://ru.pinterest.com/sandisaniiiiiiii/wedding-guest/?invite_code=10e61ec424344255929d1f647187dba9&sender=1123648313187480189"
+        target="_blanc"
+        className={styles.dresscode__button}
+      >
+        Посмотреть референсы
+      </Button>
     </section>
   );
 };

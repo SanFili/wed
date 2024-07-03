@@ -15,7 +15,7 @@ const Info = () => {
           frameBorder="0"
         ></iframe>
       </div>
-      <Button href="https://yandex.ru/maps/?ll=37.048725%2C56.099677&pt=37.048725%2C56.099677&z=12">
+      <Button href="https://yandex.ru/maps/?ll=37.048725%2C56.099677&pt=37.048725%2C56.099677&z=12" target="_blanc">
         Построить маршрут
       </Button>
     </section>

@@ -61,7 +61,7 @@
 
     &_orange {
       z-index: 1;
-      right: 50px;
+      right: 40px;
       bottom: 10px;
 
       @include mq("xxs") {
@@ -86,6 +86,13 @@
       z-index: 1;
       top: 120px;
       left: 60px;
+
+      @include mq("xxs") {
+        top: 100px;
+        left: 30px;
+        width: 120px;
+        height: 120px;
+      }
     }
 
     &_blue {
