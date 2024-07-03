@@ -4,40 +4,68 @@ import { Button } from "@/components/ui";
 
 import styles from "./Dresscode.module.scss";
 
+const colors = [
+  {
+    color: "silver",
+    width: 200,
+    height: 280,
+  },
+  {
+    color: "pink",
+    width: 180,
+    height: 180,
+  },
+  {
+    color: "orange",
+    width: 200,
+    height: 200,
+  },
+  {
+    color: "yellow",
+    width: 310,
+    height: 310,
+  },
+  {
+    color: "flower",
+    width: 180,
+    height: 180,
+  },
+  {
+    color: "blue",
+    width: 200,
+    height: 200,
+  },
+  {
+    color: "violet",
+    width: 200,
+    height: 200,
+  },
+];
+
 const Dresscode = () => {
   return (
     <section className={styles.dresscode}>
-      <h2>ДРЕСС-КОД</h2>
-      <p>Дресс-код - коктейльный</p>
+      <h2>
+        ДРЕСС-КОД
+        <br />
+        <span>коктейльный</span>
+      </h2>
       <p>
         Мы создаем этот день с особым трепетом, поэтому просим вас поддержать общую атмосферу праздника в ваших образах.
         Мы собрали немного вдохновения для вас , а так же подготовили цветовую палитру:
       </p>
-      {/* <div className={styles.dresscode__colors}>
-        <Image src="/images/colors.svg" alt="dress-code" title="dress-code" width="362" height="84" />
-      </div> */}
       <div className={styles.dresscode__flowers}>
-        <div className={cn(styles.dresscode__color, styles.dresscode__color_silver)}>
-          <Image src="/images/colors/silver.svg" alt="dress-code" title="dress-code" width="200" height="280" />
-        </div>
-        <div className={cn(styles.dresscode__color, styles.dresscode__color_pink)}>
-          <Image src="/images/colors/pink.svg" alt="dress-code" title="dress-code" width="180" height="180" />
-        </div>
-        <div className={cn(styles.dresscode__color, styles.dresscode__color_orange)}>
-          <Image src="/images/colors/orange.svg" alt="dress-code" title="dress-code" width="200" height="200" />
-        </div>
-        <div className={cn(styles.dresscode__color, styles.dresscode__color_yellow)}>
-          <Image src="/images/colors/yellow.svg" alt="dress-code" title="dress-code" width="310" height="310" />
-        </div>
-        <div className={cn(styles.dresscode__color, styles.dresscode__color_yellow2)}>
-          <Image src="/images/colors/flower.svg" alt="dress-code" title="dress-code" width="180" height="180" />
-        </div>
-        <div className={cn(styles.dresscode__color, styles.dresscode__color_blue)}>
-          <Image src="/images/colors/blue.svg" alt="dress-code" title="dress-code" width="200" height="200" />
-        </div>
-        <div className={cn(styles.dresscode__color, styles.dresscode__color_violet)}>
-          <Image src="/images/colors/violet.svg" alt="dress-code" title="dress-code" width="200" height="200" />
-        </div>
+        {colors.map((el) => (
+          <div className={cn(styles.dresscode__color, styles[`dresscode__color_${el.color}`])}>
+            <Image
+              src={`/images/colors/${el.color}.svg`}
+              alt={el.color}
+              title={el.color}
+              width={el.width}
+              height={el.height}
+            />
+          </div>
+        ))}
       </div>
       <p>
         <a>

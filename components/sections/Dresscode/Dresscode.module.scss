@@ -1,6 +1,10 @@
 .dresscode {
   padding-top: 24px;
 
+  & h2 span {
+    font-size: 18px;
+  }
+
   & p {
     margin-bottom: 12px;
 
@@ -103,7 +107,7 @@
       }
     }
 
-    &_yellow2 {
+    &_flower {
       z-index: 1;
       top: 120px;
       left: 60px;
