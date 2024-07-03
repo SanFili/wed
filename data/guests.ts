@@ -19,7 +19,7 @@ const agreeFriend = [
   },
 ];
 
-const agreeFam = (checkboxes) => [
+const agreeFam = (checkboxes: { name: string; label: string }[]) => [
   {
     type: "radio",
     name: "agree",
