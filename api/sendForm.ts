@@ -3,5 +3,5 @@ const baseUrl = "https://api.telegram.org/bot7451642357:AAGiGbgo_pvEga0oawHUYNep
 export const sendForm = async (fields: string): Promise<void> => {
   const url = `${baseUrl}/sendMessage?chat_id=-1002237850047&text=${fields}`;
 
-  const res = await fetch(url);
+  await fetch(url);
 };
