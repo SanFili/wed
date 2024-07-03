@@ -191,4 +191,26 @@ export const guests: GuestsType = {
       ...transfer,
     ],
   },
+  // Леша и Андрей Парамоновы
+  par: {
+    title: "Дорогие Леша и Андрей!",
+    text: "ваc",
+    formItems: [
+      ...agreeFam([
+        { name: "Lesha", label: "Леша" },
+        { name: "Andrey", label: "Андрей" },
+      ]),
+      ...transfer,
+    ],
+  },
+  // Геннадий
+  gen: {
+    title: "Дорогой Геннадий!",
+    ...personal,
+  },
+  // Никита
+  ni: {
+    title: "Дорогой Никита!",
+    ...personal,
+  },
 };

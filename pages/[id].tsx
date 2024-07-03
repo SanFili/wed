@@ -31,6 +31,9 @@ export const getStaticPaths = () => {
       { params: { id: "sr" } }, // Сергей
       { params: { id: "lil" } }, // Лиля
       { params: { id: "yr" } }, // Юровы
+      { params: { id: "par" } }, // Леша и Андрей Парамоновы
+      { params: { id: "gen" } }, // Геннадий
+      { params: { id: "ni" } }, // Никита
     ],
     fallback: false,
   };
