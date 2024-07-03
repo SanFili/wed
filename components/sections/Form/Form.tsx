@@ -5,7 +5,7 @@ import { Button, Checkbox, Field, Input, Modal, Radio } from "@/components/ui";
 import { FieldType, onChangeType } from "@/types/form";
 
 import styles from "./Form.module.scss";
-import { checkValidity, toFields } from "./script";
+import { checkValidity, createMessage, toFields } from "./script";
 
 type FormProps = {
   items: any[];
@@ -39,13 +39,7 @@ const Form: FC<FormProps> = ({ items, slug }) => {
     }
     setValidForm(true);
 
-    let message = "";
-    for (let key in fields) {
-      if (!fields[key].disabled)
-        message += `{{${slug}}} ${key}: ${
-          Array.isArray(fields[key].value) ? (fields[key].value as string[]).join(", ") : fields[key].value
-        };`;
-    }
+    const message = createMessage(fields, slug);
 
     sendForm(message);
     setOpenModal(true);

@@ -24,14 +24,16 @@ export const getStaticPaths = () => {
       { params: { id: "plus" } }, // с плюс 1
       { params: { id: "sh" } }, // Широких
       { params: { id: "sv" } }, // Свердловы
-      { params: { id: "nt" } }, // Наталья
+      { params: { id: "ntm" } }, // Наталья мама
       { params: { id: "al" } }, // Алексей
+      { params: { id: "nt" } }, // Наталья
       { params: { id: "ol" } }, // Олег
-      { params: { id: "olg" } }, // Ольга
+      { params: { id: "olgm" } }, // Ольга мама
       { params: { id: "sr" } }, // Сергей
       { params: { id: "lil" } }, // Лиля
       { params: { id: "yr" } }, // Юровы
       { params: { id: "par" } }, // Леша и Андрей Парамоновы
+      { params: { id: "olg" } }, // Ольга
       { params: { id: "gen" } }, // Геннадий
       { params: { id: "ni" } }, // Никита
     ],

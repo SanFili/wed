@@ -4,5 +4,4 @@ export const sendForm = async (fields: string): Promise<void> => {
   const url = `${baseUrl}/sendMessage?chat_id=-1002237850047&text=${fields}`;
 
   const res = await fetch(url);
-  console.log(res);
 };

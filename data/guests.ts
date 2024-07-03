@@ -11,7 +11,7 @@ const agreeFriend = [
     type: "radio",
     name: "agree",
     label: "Сможете ли вы присутствовать",
-    dependencies: ["transfer", "backTransfer"],
+    dependencies: ["couple", "transfer", "backTransfer"],
     radios: [
       { id: "yes", label: "Буду" },
       { id: "no", label: "Не смогу прийти" },
@@ -113,8 +113,8 @@ export const guests: GuestsType = {
       ...transfer,
     ],
   },
-  // Наталья
-  nt: {
+  // Наталья мама
+  ntm: {
     title: "Дорогая Наталья!",
     ...personal,
   },
@@ -123,13 +123,18 @@ export const guests: GuestsType = {
     title: "Дорогой Алексей!",
     ...personal,
   },
+  // Наталья
+  nt: {
+    title: "Дорогая Наталья!",
+    ...personal,
+  },
   // Олег
   ol: {
     title: "Дорогой Олег!",
     ...personal,
   },
-  // Ольга
-  olg: {
+  // Ольга мама
+  olgm: {
     title: "Дорогая Ольга!",
     ...personal,
   },
@@ -211,6 +216,11 @@ export const guests: GuestsType = {
   // Никита
   ni: {
     title: "Дорогой Никита!",
+    ...personal,
+  },
+  // Ольга
+  olg: {
+    title: "Дорогая Ольга!",
     ...personal,
   },
 };
