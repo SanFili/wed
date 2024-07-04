@@ -240,4 +240,17 @@ export const guests: GuestsType = {
       ...transfer,
     ],
   },
+  // Якубовские
+  yak: {
+    title: "Дорогие Сергей и Ольга!",
+    text: "вашу семью",
+    formItems: [
+      ...agreeFam([
+        { name: "Olga", label: "Ольга" },
+        { name: "Sergey", label: "Сергей" },
+        { name: "Arina", label: "Арина" },
+      ]),
+      ...transfer,
+    ],
+  },
 };
