@@ -223,4 +223,21 @@ export const guests: GuestsType = {
     title: "Дорогая Ольга!",
     ...personal,
   },
+  // Мария
+  mar: {
+    title: "Дорогая Мария!",
+    ...personal,
+  },
+  // Леша и Андрей Парамоновы
+  fil: {
+    title: "Дорогие Надежда и Александр!",
+    text: "ваc",
+    formItems: [
+      ...agreeFam([
+        { name: "Nadezhda", label: "Надежда" },
+        { name: "Alexander", label: "Александр" },
+      ]),
+      ...transfer,
+    ],
+  },
 };

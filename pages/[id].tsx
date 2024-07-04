@@ -26,10 +26,12 @@ export const getStaticPaths = () => {
       { params: { id: "sv" } }, // Свердловы
       { params: { id: "ntm" } }, // Наталья мама
       { params: { id: "al" } }, // Алексей
+      { params: { id: "mar" } }, // Мария
+      { params: { id: "fil" } }, // Филимоновы
       { params: { id: "nt" } }, // Наталья
       { params: { id: "ol" } }, // Олег
       { params: { id: "lil" } }, // Лиля
-      { params: { id: "yr" } }, // Юровы
+      { params: { id: "yr" } }, // Юров Кирилл
       { params: { id: "olgm" } }, // Ольга мама
       { params: { id: "sr" } }, // Сергей
       { params: { id: "par" } }, // Леша и Андрей Парамоновы
