@@ -56,7 +56,7 @@ const Dresscode = () => {
       </p>
       <div className={styles.dresscode__flowers}>
         {colors.map((el) => (
-          <div className={cn(styles.dresscode__color, styles[`dresscode__color_${el.color}`])}>
+          <div className={cn(styles.dresscode__color, styles[`dresscode__color_${el.color}`])} key={el.color}>
             <Image
               src={`/images/colors/${el.color}.svg`}
               alt={el.color}

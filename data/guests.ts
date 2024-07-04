@@ -11,7 +11,7 @@ const agreeFriend = [
     type: "radio",
     name: "agree",
     label: "Сможете ли вы присутствовать",
-    dependencies: ["couple", "transfer", "backTransfer"],
+    dependencies: ["couple", "transfer", "backTransfer", "coupleName"],
     radios: [
       { id: "yes", label: "Буду" },
       { id: "no", label: "Не смогу прийти" },
