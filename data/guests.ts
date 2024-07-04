@@ -1,23 +1,15 @@
 import { GuestsType } from "@/types/guests";
 
-const agreeFriend = [
-  {
-    type: "text",
-    name: "name",
-    label: "Ваше имя",
-    placeholder: "ФИО",
-  },
-  {
-    type: "radio",
-    name: "agree",
-    label: "Сможете ли вы присутствовать",
-    dependencies: ["couple", "transfer", "backTransfer", "coupleName"],
-    radios: [
-      { id: "yes", label: "Буду" },
-      { id: "no", label: "Не смогу прийти" },
-    ],
-  },
-];
+const agree = (dependencies) => ({
+  type: "radio",
+  name: "agree",
+  label: "Сможете ли вы присутствовать",
+  dependencies,
+  radios: [
+    { id: "yes", label: "Буду" },
+    { id: "no", label: "Не смогу прийти" },
+  ],
+});
 
 const agreeFam = (checkboxes: { name: string; label: string }[]) => [
   {
@@ -65,33 +57,35 @@ const transfer = [
 
 const personal = {
   text: "Вас",
-  formItems: [
-    {
-      type: "radio",
-      name: "agree",
-      label: "Сможете ли вы присутствовать",
-      dependencies: ["transfer", "backTransfer"],
-      radios: [
-        { id: "yes", label: "Буду" },
-        { id: "no", label: "Не смогу прийти" },
-      ],
-    },
-    ,
-    ...transfer,
-  ],
+  formItems: [agree(["transfer", "backTransfer"]), ...transfer],
 };
 
 export const guests: GuestsType = {
   friend: {
     title: "ДОРОГИЕ ДРУЗЬЯ!",
     text: "вас",
-    formItems: [...agreeFriend, ...transfer],
+    formItems: [
+      {
+        type: "text",
+        name: "name",
+        label: "Ваше имя",
+        placeholder: "ФИО",
+      },
+      agree(["transfer", "backTransfer"]),
+      ...transfer,
+    ],
   },
   plus: {
     title: "ДОРОГИЕ ДРУЗЬЯ!",
     text: "вас",
     formItems: [
-      ...agreeFriend,
+      {
+        type: "text",
+        name: "name",
+        label: "Ваше имя",
+        placeholder: "ФИО",
+      },
+      agree(["couple", "coupleName", "transfer", "backTransfer"]),
       {
         type: "radio",
         name: "couple",
@@ -215,8 +209,15 @@ export const guests: GuestsType = {
   },
   // Никита
   ni: {
-    title: "Дорогой Никита!",
-    ...personal,
+    title: "Дорогие Никита и Рита!",
+    text: "ваc",
+    formItems: [
+      ...agreeFam([
+        { name: "Nikita", label: "Никита" },
+        { name: "Rita", label: "Рита" },
+      ]),
+      ...transfer,
+    ],
   },
   // Ольга
   olg: {

@@ -28,6 +28,7 @@ const Form: FC<FormProps> = ({ items, slug }) => {
     let valid = true;
     for (let name in fields) {
       if (!checkValidity(fields[name])) {
+        console.log(name);
         setFields((prev) => ({ ...prev, [name]: { ...prev[name], error: true } }));
         valid = false;
         setValidForm(false);
