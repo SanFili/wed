@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Button } from "@/components/ui";
 
 import styles from "./Contacts.module.scss";
 
@@ -22,7 +23,13 @@ const Contacts = () => {
           </div>
         </div>
       </div>
-      <p>По любым вопросам вы можете обратиться к нам, а также к нашему замечательному организатору</p>
+      <p className={styles.contacts__info}>Добавляйтесь в наш чатик, чтобы быть в курсе всех обновлений</p>
+      <Button className={styles.contacts__chat} href="https://t.me/+_kEaI2qxRBs5NDg6" target="_blanc">
+        Перейти в чат
+      </Button>
+      <p className={styles.contacts__info}>
+        По любым вопросам вы можете обращаться к нам, а также к нашему замечательному организатору
+      </p>
       <p>
         Дарья{" "}
         <a href="tel:+79017443195">
