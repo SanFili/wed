@@ -24,18 +24,25 @@ const Contacts = () => {
         </div>
       </div>
       <p className={styles.contacts__info}>Добавляйтесь в наш чатик, чтобы быть в курсе всех обновлений</p>
-      <Button className={styles.contacts__chat} href="https://t.me/+_kEaI2qxRBs5NDg6" target="_blanc">
+      <Button className={styles.contacts__button} href="https://t.me/+_kEaI2qxRBs5NDg6" target="_blanc">
         Перейти в чат
       </Button>
+      <h2>ОСТАЛИСЬ ВОПРОСЫ?</h2>
       <p className={styles.contacts__info}>
         По любым вопросам вы можете обращаться к нам, а также к нашему замечательному организатору
       </p>
-      <p>
+      <p className={styles.contacts__info}>
         Дарья{" "}
         <a href="tel:+79017443195">
           <span>+7(901)744-31-95</span>
         </a>
       </p>
+      <div className={styles.contacts__chat}>
+        <p>А еще в нашем </p>
+        <Button href="https://t.me/+_kEaI2qxRBs5NDg6" target="_blanc" icon="telegram">
+          чате
+        </Button>
+      </div>
     </section>
   );
 };

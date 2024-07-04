@@ -1,5 +1,6 @@
 import cn from "classnames";
 import { FC, memo } from "react";
+import Image from "next/image";
 
 import styles from "./Button.module.scss";
 
@@ -12,9 +13,10 @@ type ButtonProps = {
   target?: string;
   id?: string;
   children: string;
+  icon?: string;
 };
 
-const Button: FC<ButtonProps> = ({ children, type = "button", className, href, disabled, ...props }) => {
+const Button: FC<ButtonProps> = ({ children, type = "button", className, href, disabled, icon, ...props }) => {
   const Element = href ? "a" : "button";
 
   return (
@@ -26,6 +28,11 @@ const Button: FC<ButtonProps> = ({ children, type = "button", className, href, d
       {...props}
     >
       {children}
+      {icon && (
+        <div className={styles.button__icon}>
+          <Image src={`/images/${icon}.svg`} alt={icon} title={icon} width="16" height="16" />
+        </div>
+      )}
     </Element>
   );
 };
