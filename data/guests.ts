@@ -1,6 +1,6 @@
 import { GuestsType } from "@/types/guests";
 
-const agree = (dependencies) => ({
+const agree = (dependencies: string[]) => ({
   type: "radio",
   name: "agree",
   label: "Сможете ли вы присутствовать",
