@@ -1,8 +1,6 @@
 .wishes {
   position: relative;
 
-  // height: 350px;
-
   &__title {
     position: relative;
   }
@@ -11,6 +9,10 @@
     position: relative;
     width: 50%;
     margin-bottom: 12px;
+
+    &_full {
+      width: 100%;
+    }
   }
 
   &__flower {

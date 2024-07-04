@@ -33,6 +33,7 @@ export const getStaticPaths = () => {
       { params: { id: "lil" } }, // Лиля
       { params: { id: "yak" } }, // Якубовские
       { params: { id: "yr" } }, // Юров Кирилл
+      { params: { id: "kar" } }, // Карина
       { params: { id: "olgm" } }, // Ольга мама
       { params: { id: "sr" } }, // Сергей
       { params: { id: "par" } }, // Леша и Андрей Парамоновы

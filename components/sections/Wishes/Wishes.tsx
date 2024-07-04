@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import cn from "classnames";
 
 import styles from "./Wishes.module.scss";
 
@@ -23,11 +24,12 @@ const Schedule = () => {
         Пожалуйста, не дарите нам цветы, пусть ваши руки будут свободны для объятий.
       </p>
       <h3>ПОЖЕЛАНИЯ</h3>
-      {/* <p className={styles.wishes__text}>
-        Наша вечеринка не предполагает присутсвия маленьких детей. Мы будем рады, если в этот день вы сможете отвлечься
-        от родительских забот.
-      </p> */}
       <p className={styles.wishes__text}>Просим вас воздержаться от криков &ldquo;Горько&rdquo; — у нас сладко!</p>
+      <h3>ФОРМАТ</h3>
+      <p className={cn(styles.wishes__text, styles.wishes__text_full)}>
+        Наша вечеринка предполагает формат <span>фуршетной вечеринки</span>. Мы будем рады, если в этот день вы оставите
+        маленьких детей в надежных руках и сможете отвлечься от родительских забот.
+      </p>
     </section>
   );
 };
