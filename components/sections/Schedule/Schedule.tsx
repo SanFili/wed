@@ -23,7 +23,7 @@ const Schedule = () => {
         <p className={styles.schedule__text}>плачем на церемонии</p>
       </div>
       <div className={styles.schedule__row}>
-        <p className={styles.schedule__time}>до 23:00</p>
+        <p className={styles.schedule__time}>до 00:00</p>
         <p className={styles.schedule__text}>—</p>
         <p className={styles.schedule__text}>едим, пьем, танцуем, веселимся</p>
       </div>
