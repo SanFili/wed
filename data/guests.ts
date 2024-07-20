@@ -266,4 +266,16 @@ export const guests: GuestsType = {
       ...transfer,
     ],
   },
+   // Лера
+   val: {
+    title: "Дорогие Валерия и Евгений!",
+    text: "вас",
+    formItems: [
+      ...agreeFam([
+        { name: "Valeria", label: "Валерия" },
+        { name: "Evgeni", label: "Евгений" },
+      ]),
+      ...transfer,
+    ],
+  },
 };
