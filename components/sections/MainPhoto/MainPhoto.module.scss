@@ -1,0 +1,128 @@
+.photo {
+  position: relative;
+  height: 390px;
+  padding: 0;
+
+  @include mq("xs") {
+    height: 373px;
+  }
+
+  @include mq("xxs") {
+    height: 340px;
+  }
+
+  &__background {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 50%;
+    visibility: hidden;
+    width: calc(100vw + 100px);
+    min-width: 420px;
+    max-width: 479px;
+    transform: translate(-50%, 0);
+
+    @include mq("xs") {
+      visibility: visible;
+    }
+  }
+
+  &__backFrame {
+    position: absolute;
+    z-index: 1;
+    top: 5px;
+    left: 50%;
+    width: 426px;
+    transform: translate(-50%, 0);
+
+    @include mq("xs") {
+      visibility: hidden;
+    }
+  }
+
+  &__image {
+    position: relative;
+    top: 20px;
+    left: 50%;
+    width: calc(100vw - 20px);
+    min-width: 300px;
+    max-width: 345px;
+    transform: translate(-50%, 0);
+
+    @include mq("xs") {
+      top: -5px;
+    }
+  }
+
+  &__content {
+    position: absolute;
+    z-index: 10;
+    top: 20px;
+    left: 50%;
+    width: 368px;
+    height: 340px;
+    transform: translate(-50%, 0);
+
+    @include mq("xs") {
+      top: 3px;
+    }
+  }
+
+  &__frame {
+    position: absolute;
+    z-index: 2;
+    top: 10px;
+    left: 50%;
+    width: 100vw;
+    min-width: 320px;
+    max-width: 368px;
+    transform: translateX(-50%);
+
+    @include mq("xs") {
+      top: 3px;
+    }
+  }
+
+  &__title {
+    position: relative;
+    top: 30px;
+    left: calc(50% + 3px);
+    text-align: center;
+    white-space: nowrap;
+    letter-spacing: 4px;
+    font-family: "Pilowlava", sans-serif;
+    font-size: 46px;
+    color: var(--yellow);
+    transform: translateX(-50%);
+
+    @include mq("xxs") {
+      font-size: 38px;
+    }
+
+    & span {
+      display: inline-block;
+      padding: 0 12px 0 14px;
+      transform: scale(1.7, 1);
+    }
+  }
+
+  &__date {
+    position: absolute;
+    top: 50%;
+    left: 75px;
+    display: inline-block;
+    text-align: center;
+    letter-spacing: 4px;
+    font-family: "Pilowlava", sans-serif;
+    font-size: 56px;
+    line-height: 65%;
+    color: var(--yellow);
+    transform: scale(1.8, 1) translateY(-50%);
+
+    @include mq("xxs") {
+      top: 45%;
+      left: 85px;
+      font-size: 48px;
+    }
+  }
+}

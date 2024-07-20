@@ -1,0 +1,158 @@
+.dresscode {
+  padding-top: 24px;
+
+  & h2 span {
+    font-size: 18px;
+  }
+
+  & p {
+    margin-bottom: 12px;
+
+    & a {
+      text-decoration: none;
+      background: linear-gradient(to right, var(--yellow), var(--yellow)),
+        linear-gradient(to right, var(--pink), var(--pink));
+      background-repeat: no-repeat;
+      background-position: 100% 100%, 0 100%;
+      background-size: 100% 3px, 0 3px;
+      transition: background-size 0.5s linear;
+
+      &:hover {
+        background-size: 0 3px, 100% 3px;
+      }
+    }
+  }
+
+  &__colors {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__flowers {
+    position: relative;
+    height: 450px;
+
+    @include mq("xxs") {
+      height: 350px;
+    }
+  }
+
+  &__color {
+    position: absolute;
+
+    &_silver {
+      z-index: 2;
+      top: -25px;
+      left: -10%;
+      transform: rotate(-23deg);
+
+      @include mq("xs", "xxs") {
+        width: 160px;
+        height: 180px;
+      }
+
+      @include mq("xxs") {
+        width: 140px;
+        height: 200px;
+      }
+    }
+
+    &_pink {
+      z-index: 1;
+      top: -10px;
+      right: -7px;
+
+      @include mq("xs", "xxs") {
+        width: 160px;
+        height: 160px;
+      }
+
+      @include mq("xxs") {
+        width: 140px;
+        height: 140px;
+      }
+    }
+
+    &_orange {
+      z-index: 1;
+      right: 40px;
+      bottom: 10px;
+
+      @include mq("xs", "xxs") {
+        right: 30px;
+        width: 180px;
+        height: 180px;
+      }
+
+      @include mq("xxs") {
+        right: 30px;
+        width: 150px;
+        height: 150px;
+      }
+    }
+
+    &_yellow {
+      z-index: 0;
+      top: -10px;
+      right: 0;
+
+      @include mq("xs", "xxs") {
+        width: 280px;
+        height: 280px;
+      }
+
+      @include mq("xxs") {
+        width: 210px;
+        height: 210px;
+      }
+    }
+
+    &_flower {
+      z-index: 1;
+      top: 120px;
+      left: 60px;
+
+      @include mq("xs", "xxs") {
+        top: 130px;
+        left: 40px;
+        width: 160px;
+        height: 160px;
+      }
+
+      @include mq("xxs") {
+        top: 100px;
+        left: 30px;
+        width: 120px;
+        height: 120px;
+      }
+    }
+
+    &_blue {
+      z-index: 1;
+      top: 140px;
+      right: -30px;
+      transform: rotate(16deg);
+
+      @include mq("xxs") {
+        top: 100px;
+        width: 160px;
+        height: 160px;
+      }
+    }
+
+    &_violet {
+      z-index: 0;
+      bottom: 0;
+      left: 0;
+
+      @include mq("xxs") {
+        width: 150px;
+        height: 150px;
+      }
+    }
+  }
+
+  &__button {
+    width: 100%;
+  }
+}
